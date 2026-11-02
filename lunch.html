@@ -23,155 +23,14 @@
         ><a href="#contacts">Контакты</a>
       </nav>
     </header>
-    <main>
-      <section>
-        <h2>Выберите суп</h2>
-        <div class="dishes">
-          <div class="dish" data-dish="gaspacho">
-            <img
-              src="assets/menu/soups/gazpacho.jpg"
-              alt="Гаспачо"
-              width="360"
-              height="360"
-           >
-            <p class="price">195 ₽</p>
-            <p class="dish-name">Гаспачо</p>
-            <p class="weight">350 г</p>
-            <button type="button">Добавить</button>
-          </div>
-          <div class="dish" data-dish="mushroom">
-            <img
-              src="assets/menu/soups/mushroom_soup.jpg"
-              alt="Грибной суп-пюре"
-              width="360"
-              height="360"
-           >
-            <p class="price">185 ₽</p>
-            <p class="dish-name">Грибной суп-пюре</p>
-            <p class="weight">330 г</p>
-            <button type="button">Добавить</button>
-          </div>
-          <div class="dish" data-dish="norwegian">
-            <img
-              src="assets/menu/soups/norwegian_soup.jpg"
-              alt="Норвежский суп"
-              width="360"
-              height="360"
-           >
-            <p class="price">270 ₽</p>
-            <p class="dish-name">Норвежский суп</p>
-            <p class="weight">330 г</p>
-            <button type="button">Добавить</button>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Выберите главное блюдо</h2>
-        <div class="dishes">
-          <div class="dish" data-dish="lasagna">
-            <img
-              src="assets/menu/main_course/lasagna.jpg"
-              alt="Лазанья"
-              width="360"
-              height="360"
-           >
-            <p class="price">385 ₽</p>
-            <p class="dish-name">Лазанья</p>
-            <p class="weight">310 г</p>
-            <button type="button">Добавить</button>
-          </div>
-          <div class="dish" data-dish="cutlets">
-            <img
-              src="assets/menu/main_course/chickencutletsandmashedpotatoes.jpg"
-              alt="Куриные котлеты с пюре"
-              width="360"
-              height="360"
-           >
-            <p class="price">225 ₽</p>
-            <p class="dish-name">Куриные котлеты с пюре</p>
-            <p class="weight">350 г</p>
-            <button type="button">Добавить</button>
-          </div>
-          <div class="dish" data-dish="potatoes">
-            <img
-              src="assets/menu/main_course/friedpotatoeswithmushrooms1.jpg"
-              alt="Жареная картошка с грибами"
-              width="360"
-              height="360"
-           >
-            <p class="price">150 ₽</p>
-            <p class="dish-name">Жареная картошка с грибами</p>
-            <p class="weight">250 г</p>
-            <button type="button">Добавить</button>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Выберите напиток</h2>
-        <div class="dishes">
-          <div class="dish" data-dish="orange">
-            <img
-              src="assets/menu/beverages/orangejuice.jpg"
-              alt="Апельсиновый сок"
-              width="360"
-              height="360"
-           >
-            <p class="price">120 ₽</p>
-            <p class="dish-name">Апельсиновый сок</p>
-            <p class="weight">300 мл</p>
-            <button type="button">Добавить</button>
-          </div>
-          <div class="dish" data-dish="apple">
-            <img
-              src="assets/menu/beverages/applejuice.jpg"
-              alt="Яблочный сок"
-              width="360"
-              height="360"
-           >
-            <p class="price">100 ₽</p>
-            <p class="dish-name">Яблочный сок</p>
-            <p class="weight">300 мл</p>
-            <button type="button">Добавить</button>
-          </div>
-          <div class="dish" data-dish="carrot">
-            <img
-              src="assets/menu/beverages/carrotjuice.jpg"
-              alt="Морковный сок"
-              width="360"
-              height="360"
-           >
-            <p class="price">110 ₽</p>
-            <p class="dish-name">Морковный сок</p>
-            <p class="weight">300 мл</p>
-            <button type="button">Добавить</button>
-          </div>
-        </div>
-      </section>
-    </main>
+    <main id="menu"></main>
     <section class="order-section">
       <h2>Сделать заказ</h2>
       <form id="order-form" action="https://httpbin.org/post" method="post">
         <div>
           <h3>Ваш заказ</h3>
-          <label for="soup"> суп</label
-          ><select id="soup" name="soup" required>
-            <option value="">Выберите суп</option>
-            <option value="gaspacho">Гаспачо</option>
-            <option value="mushroom">Грибной суп-пюре</option>
-            <option value="norwegian">Норвежский суп</option></select
-          ><label for="main-course"> главное блюдо</label
-          ><select id="main-course" name="main-course" required>
-            <option value="">Выберите главное блюдо</option>
-            <option value="lasagna">Лазанья</option>
-            <option value="cutlets">Куриные котлеты с пюре</option>
-            <option value="potatoes">Жареная картошка с грибами</option></select
-          ><label for="drink"> напиток</label
-          ><select id="drink" name="drink" required>
-            <option value="">Выберите напиток</option>
-            <option value="orange">Апельсиновый сок</option>
-            <option value="apple">Яблочный сок</option>
-            <option value="carrot">Морковный сок</option></select
-          ><label for="comment">Комментарии к заказу</label
+          <div id="order-summary" aria-live="polite">Ничего не выбрано</div>
+          <label for="comment">Комментарии к заказу</label
           ><textarea id="comment" name="comment" rows="5"></textarea>
         </div>
         <div class="customer">
@@ -243,5 +102,7 @@
       <p>Позвонить нам: <a href="tel:+74952230523">+7 (495) 223-05-23</a></p>
       <p>Москва, Большая Семёновская, 38 · Ежедневно 07:00–23:00</p>
     </footer>
+    <script src="scripts/dishes.js"></script>
+    <script src="scripts/menu.js"></script>
   </body>
 </html>
