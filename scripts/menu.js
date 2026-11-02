@@ -135,7 +135,24 @@ function setupForm() {
     }, 0);
   });
 }
-renderMenu();
-renderSummary();
-setupForm();
-renderCombos();
+async function start() {
+  renderCombos();
+  setupForm();
+  const root = document.querySelector("#menu");
+  if (root) root.textContent = "Загружаем меню…";
+  try {
+    window.dishes = await loadDishes();
+    renderMenu();
+    renderSummary();
+  } catch (error) {
+    if (root) {
+      root.replaceChildren(make("p", error.message));
+      const retry = make("button", "Повторить загрузку");
+      retry.type = "button";
+      retry.addEventListener("click", start);
+      root.append(retry);
+    }
+    notify(error.message);
+  }
+}
+start();
