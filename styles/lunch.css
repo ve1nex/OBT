@@ -61,3 +61,21 @@
     text-align: center;
   }
 }
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.filters button {
+  border: none;
+  background: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: #333;
+}
+.filters button:hover,
+.filters button.active {
+  background: #f1eee9;
+  color: tomato;
+}
