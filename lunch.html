@@ -20,6 +20,7 @@
       <nav aria-label="Основная навигация">
         <a href="index.html">О нас</a
         ><a href="lunch.html" class="active" aria-current="page">Собрать ланч</a
+        ><a href="checkout.html">Оформить заказ</a
         ><a href="#contacts">Контакты</a>
       </nav>
     </header>
@@ -29,84 +30,16 @@
       </section>
       <div id="menu"></div>
     </main>
-    <section class="order-section">
-      <h2>Сделать заказ</h2>
-      <form id="order-form" action="https://httpbin.org/post" method="post">
-        <div>
-          <h3>Ваш заказ</h3>
-          <div id="order-summary" aria-live="polite">Ничего не выбрано</div>
-          <label for="comment">Комментарии к заказу</label
-          ><textarea id="comment" name="comment" rows="5"></textarea>
-        </div>
-        <div class="customer">
-          <h3>Ваши данные</h3>
-          <label for="full_name">Имя</label
-          ><input
-            id="full_name"
-            name="full_name"
-            autocomplete="name"
-            required
-         ><label for="email">Email</label
-          ><input
-            type="email"
-            id="email"
-            name="email"
-            autocomplete="email"
-            required
-         ><label class="inline"
-            ><input type="checkbox" name="subscribe" value="1" checked>
-            Получать информацию о скидках и акциях</label
-          ><label for="phone">Номер телефона</label
-          ><input
-            type="tel"
-            id="phone"
-            name="phone"
-            autocomplete="tel"
-            required
-         ><label for="delivery_address">Адрес доставки</label
-          ><input
-            id="delivery_address"
-            name="delivery_address"
-            autocomplete="address-line1"
-            required
-         >
-          <p class="hint">Доставка осуществляется только по Москве</p>
-          <fieldset>
-            <legend>Время доставки</legend>
-            <label class="inline"
-              ><input type="radio" name="delivery_type" value="now" required>
-              Как можно скорее</label
-            ><label class="inline"
-              ><input
-                type="radio"
-                name="delivery_type"
-                value="by_time"
-                required
-             >
-              К указанному времени</label
-            >
-          </fieldset>
-          <label for="delivery_time">Укажите время доставки</label
-          ><input
-            type="time"
-            id="delivery_time"
-            name="delivery_time"
-            min="07:00"
-            max="23:00"
-            step="300"
-         >
-          <p class="hint">Доставляем с 07:00 до 23:00, шаг — 5 минут.</p>
-          <div class="actions">
-            <button type="reset">Сбросить</button
-            ><button type="submit">Отправить</button>
-          </div>
-        </div>
-      </form>
-    </section>
+    <aside id="checkout-panel" class="checkout-panel" hidden>
+      <strong>Стоимость заказа: <span id="panel-total"></span></strong
+      ><a aria-disabled="true">Перейти к оформлению</a>
+    </aside>
     <footer id="contacts">
       <p>Позвонить нам: <a href="tel:+74952230523">+7 (495) 223-05-23</a></p>
       <p>Москва, Большая Семёновская, 38 · Ежедневно 07:00–23:00</p>
     </footer>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/checkout.js"></script>
     <script src="scripts/dishes.js"></script>
     <script src="scripts/filters.js"></script>
     <script src="scripts/validation.js"></script>

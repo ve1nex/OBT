@@ -115,3 +115,35 @@ dialog button:hover {
     grid-template-columns: 1fr;
   }
 }
+.checkout-panel {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 40px;
+  background: white;
+  border-top: 2px solid tomato;
+}
+[hidden] {
+  display: none !important;
+}
+.checkout-panel a {
+  padding: 10px;
+  background: #f1eee9;
+  border-radius: 8px;
+}
+[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: default;
+}
+.api-settings {
+  margin-bottom: 30px;
+}
+@media (max-width: 600px) {
+  .checkout-panel {
+    padding: 16px;
+    flex-direction: column;
+  }
+}

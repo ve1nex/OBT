@@ -6,7 +6,7 @@ const categories = [
   ["drink", "Выберите напиток"],
   ["dessert", "Выберите десерт"],
 ];
-let selected = {};
+let selected = readSelected();
 const filters = {};
 function make(tag, text, className) {
   const node = document.createElement(tag);
@@ -40,8 +40,10 @@ function renderCard(dish) {
       (entry) => entry.keyword === card.dataset.dish,
     );
     selected[item.category] = dishId(item);
+    saveSelected(selected);
     renderMenu();
     renderSummary();
+    renderPanel();
   });
   card.append(
     image,
@@ -116,14 +118,12 @@ function setupForm() {
   const form = document.querySelector("#order-form");
   if (!form) return;
   form.addEventListener("submit", (event) => {
-    const error = comboError(chosen());
-    if (error) {
-      event.preventDefault();
-      notify(error);
-    }
+    event.preventDefault();
+    submitOrder(form);
   });
   form.addEventListener("reset", () => {
     selected = {};
+    saveSelected(selected);
     setTimeout(() => {
       form.querySelectorAll("input, textarea").forEach((input) => {
         if (input.type === "checkbox" || input.type === "radio")
@@ -132,18 +132,25 @@ function setupForm() {
       });
       renderMenu();
       renderSummary();
+      renderCheckout();
+      renderPanel();
+      renderCheckout();
+      renderPanel();
     }, 0);
   });
 }
 async function start() {
   renderCombos();
   setupForm();
+  setupKey();
   const root = document.querySelector("#menu");
   if (root) root.textContent = "Загружаем меню…";
   try {
     window.dishes = await loadDishes();
     renderMenu();
     renderSummary();
+    renderCheckout();
+    renderPanel();
   } catch (error) {
     if (root) {
       root.replaceChildren(make("p", error.message));
