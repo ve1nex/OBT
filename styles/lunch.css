@@ -1,0 +1,63 @@
+.dishes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.dish {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  border: 2px solid transparent;
+  border-radius: 35px;
+  cursor: pointer;
+  background: white;
+  filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+  min-width: 0;
+}
+.dish:hover,
+.dish.selected {
+  border-color: tomato;
+}
+.dish img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 35px;
+}
+.dish .price,
+.dish-name {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.weight {
+  margin-top: auto;
+  padding-top: 18px;
+  color: #666;
+}
+.dish button {
+  margin-top: 10px;
+  padding: 10px 30px;
+  background: #f1eee9;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.dish:hover button,
+.dish.selected button {
+  background: tomato;
+}
+@media (max-width: 800px) {
+  .dishes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .dishes {
+    grid-template-columns: 1fr;
+  }
+  section > h2 {
+    text-align: center;
+  }
+}

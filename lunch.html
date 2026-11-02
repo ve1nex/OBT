@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Собрать ланч — Food Construct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+   >
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/lunch.css">
+  </head>
+  <body>
+    <header>
+      <h1>Food Construct</h1>
+      <nav aria-label="Основная навигация">
+        <a href="index.html">О нас</a
+        ><a href="lunch.html" class="active" aria-current="page">Собрать ланч</a
+        ><a href="#contacts">Контакты</a>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Выберите суп</h2>
+        <div class="dishes">
+          <div class="dish" data-dish="gaspacho">
+            <img
+              src="assets/menu/soups/gazpacho.jpg"
+              alt="Гаспачо"
+              width="360"
+              height="360"
+           >
+            <p class="price">195 ₽</p>
+            <p class="dish-name">Гаспачо</p>
+            <p class="weight">350 г</p>
+            <button type="button">Добавить</button>
+          </div>
+          <div class="dish" data-dish="mushroom">
+            <img
+              src="assets/menu/soups/mushroom_soup.jpg"
+              alt="Грибной суп-пюре"
+              width="360"
+              height="360"
+           >
+            <p class="price">185 ₽</p>
+            <p class="dish-name">Грибной суп-пюре</p>
+            <p class="weight">330 г</p>
+            <button type="button">Добавить</button>
+          </div>
+          <div class="dish" data-dish="norwegian">
+            <img
+              src="assets/menu/soups/norwegian_soup.jpg"
+              alt="Норвежский суп"
+              width="360"
+              height="360"
+           >
+            <p class="price">270 ₽</p>
+            <p class="dish-name">Норвежский суп</p>
+            <p class="weight">330 г</p>
+            <button type="button">Добавить</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Выберите главное блюдо</h2>
+        <div class="dishes">
+          <div class="dish" data-dish="lasagna">
+            <img
+              src="assets/menu/main_course/lasagna.jpg"
+              alt="Лазанья"
+              width="360"
+              height="360"
+           >
+            <p class="price">385 ₽</p>
+            <p class="dish-name">Лазанья</p>
+            <p class="weight">310 г</p>
+            <button type="button">Добавить</button>
+          </div>
+          <div class="dish" data-dish="cutlets">
+            <img
+              src="assets/menu/main_course/chickencutletsandmashedpotatoes.jpg"
+              alt="Куриные котлеты с пюре"
+              width="360"
+              height="360"
+           >
+            <p class="price">225 ₽</p>
+            <p class="dish-name">Куриные котлеты с пюре</p>
+            <p class="weight">350 г</p>
+            <button type="button">Добавить</button>
+          </div>
+          <div class="dish" data-dish="potatoes">
+            <img
+              src="assets/menu/main_course/friedpotatoeswithmushrooms1.jpg"
+              alt="Жареная картошка с грибами"
+              width="360"
+              height="360"
+           >
+            <p class="price">150 ₽</p>
+            <p class="dish-name">Жареная картошка с грибами</p>
+            <p class="weight">250 г</p>
+            <button type="button">Добавить</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Выберите напиток</h2>
+        <div class="dishes">
+          <div class="dish" data-dish="orange">
+            <img
+              src="assets/menu/beverages/orangejuice.jpg"
+              alt="Апельсиновый сок"
+              width="360"
+              height="360"
+           >
+            <p class="price">120 ₽</p>
+            <p class="dish-name">Апельсиновый сок</p>
+            <p class="weight">300 мл</p>
+            <button type="button">Добавить</button>
+          </div>
+          <div class="dish" data-dish="apple">
+            <img
+              src="assets/menu/beverages/applejuice.jpg"
+              alt="Яблочный сок"
+              width="360"
+              height="360"
+           >
+            <p class="price">100 ₽</p>
+            <p class="dish-name">Яблочный сок</p>
+            <p class="weight">300 мл</p>
+            <button type="button">Добавить</button>
+          </div>
+          <div class="dish" data-dish="carrot">
+            <img
+              src="assets/menu/beverages/carrotjuice.jpg"
+              alt="Морковный сок"
+              width="360"
+              height="360"
+           >
+            <p class="price">110 ₽</p>
+            <p class="dish-name">Морковный сок</p>
+            <p class="weight">300 мл</p>
+            <button type="button">Добавить</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="contacts">
+      <p>Позвонить нам: <a href="tel:+74952230523">+7 (495) 223-05-23</a></p>
+      <p>Москва, Большая Семёновская, 38 · Ежедневно 07:00–23:00</p>
+    </footer>
+  </body>
+</html>
