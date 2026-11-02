@@ -115,6 +115,13 @@ function renderSummary() {
 function setupForm() {
   const form = document.querySelector("#order-form");
   if (!form) return;
+  form.addEventListener("submit", (event) => {
+    const error = comboError(chosen());
+    if (error) {
+      event.preventDefault();
+      notify(error);
+    }
+  });
   form.addEventListener("reset", () => {
     selected = {};
     setTimeout(() => {
@@ -131,3 +138,4 @@ function setupForm() {
 renderMenu();
 renderSummary();
 setupForm();
+renderCombos();

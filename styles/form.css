@@ -55,3 +55,63 @@ fieldset {
     gap: 20px;
   }
 }
+dialog {
+  position: fixed;
+  margin: auto;
+  max-width: calc(100% - 32px);
+  padding: 36px;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
+dialog::backdrop {
+  background: rgb(0 0 0 / 40%);
+}
+dialog button {
+  padding: 10px 24px;
+  background: white;
+  border: 1px solid #333;
+}
+dialog button:hover {
+  background: tomato;
+  color: white;
+}
+.combos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.combo {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.combo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.combo-item img {
+  object-fit: contain;
+  transition: transform 150ms;
+}
+.combo-item img:hover {
+  transform: translateY(-8px) scale(1.15);
+}
+.dessert-info {
+  margin: 28px 0;
+}
+.dessert-info small {
+  font-size: 16px;
+}
+@media (max-width: 1000px) {
+  .combos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .combos {
+    grid-template-columns: 1fr;
+  }
+}
