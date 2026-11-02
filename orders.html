@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Заказы — Food Construct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+   >
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/lunch.css">
+    <link rel="stylesheet" href="styles/form.css">
+  </head>
+  <body>
+    <header>
+      <h1>Food Construct</h1>
+      <nav aria-label="Основная навигация">
+        <a href="index.html">О нас</a><a href="lunch.html">Собрать ланч</a
+        ><a href="checkout.html">Оформить заказ</a
+        ><a href="orders.html" class="active" aria-current="page">Заказы</a
+        ><a href="#contacts">Контакты</a>
+      </nav>
+    </header>
+    <main>
+      <h2>История заказов</h2>
+      <details class="api-settings">
+        <summary>Доступ к учебному API</summary>
+        <p>
+          Введите свой ключ из СДО. Ключ хранится только в текущей сессии
+          браузера и передаётся учебному API для работы с вашими заказами.
+        </p>
+        <form id="api-settings">
+          <label for="api_key">API-ключ</label
+          ><input
+            type="password"
+            id="api_key"
+            name="api_key"
+            autocomplete="off"
+            required
+         ><button type="submit">Сохранить ключ</button>
+        </form>
+      </details>
+      <div id="orders" class="table-scroll" aria-live="polite"></div>
+    </main>
+    <footer id="contacts">
+      <p>Позвонить нам: <a href="tel:+74952230523">+7 (495) 223-05-23</a></p>
+      <p>Москва, Большая Семёновская, 38 · Ежедневно 07:00–23:00</p>
+    </footer>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/dishes.js"></script>
+    <script src="scripts/validation.js"></script>
+    <script src="scripts/checkout.js"></script>
+    <script src="scripts/orders.js"></script>
+  </body>
+</html>

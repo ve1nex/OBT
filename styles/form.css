@@ -147,3 +147,24 @@ dialog button:hover {
     flex-direction: column;
   }
 }
+.table-scroll {
+  overflow-x: auto;
+  margin-bottom: 32px;
+}
+.table-scroll td {
+  padding: 12px;
+}
+.table-scroll button {
+  margin: 4px;
+  padding: 6px;
+}
+.order-dialog {
+  width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.dialog-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
