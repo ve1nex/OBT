@@ -1,0 +1,57 @@
+#order-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+.order-section > h2 {
+  text-align: center;
+}
+label {
+  display: block;
+  margin: 16px 0 8px;
+}
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #777;
+  border-radius: 2px;
+}
+.inline {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 16px;
+}
+fieldset {
+  padding: 0;
+  border: 0;
+  margin-top: 24px;
+}
+.hint {
+  font-size: 14px;
+  margin-top: 6px;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.actions button {
+  flex: 1;
+  padding: 10px;
+  background: white;
+  border: 1px solid #333;
+}
+.actions button:hover {
+  background: tomato;
+}
+@media (max-width: 600px) {
+  #order-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

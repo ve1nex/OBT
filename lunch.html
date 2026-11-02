@@ -12,6 +12,7 @@
    >
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/lunch.css">
+    <link rel="stylesheet" href="styles/form.css">
   </head>
   <body>
     <header>
@@ -147,6 +148,97 @@
         </div>
       </section>
     </main>
+    <section class="order-section">
+      <h2>Сделать заказ</h2>
+      <form id="order-form" action="https://httpbin.org/post" method="post">
+        <div>
+          <h3>Ваш заказ</h3>
+          <label for="soup"> суп</label
+          ><select id="soup" name="soup" required>
+            <option value="">Выберите суп</option>
+            <option value="gaspacho">Гаспачо</option>
+            <option value="mushroom">Грибной суп-пюре</option>
+            <option value="norwegian">Норвежский суп</option></select
+          ><label for="main-course"> главное блюдо</label
+          ><select id="main-course" name="main-course" required>
+            <option value="">Выберите главное блюдо</option>
+            <option value="lasagna">Лазанья</option>
+            <option value="cutlets">Куриные котлеты с пюре</option>
+            <option value="potatoes">Жареная картошка с грибами</option></select
+          ><label for="drink"> напиток</label
+          ><select id="drink" name="drink" required>
+            <option value="">Выберите напиток</option>
+            <option value="orange">Апельсиновый сок</option>
+            <option value="apple">Яблочный сок</option>
+            <option value="carrot">Морковный сок</option></select
+          ><label for="comment">Комментарии к заказу</label
+          ><textarea id="comment" name="comment" rows="5"></textarea>
+        </div>
+        <div class="customer">
+          <h3>Ваши данные</h3>
+          <label for="full_name">Имя</label
+          ><input
+            id="full_name"
+            name="full_name"
+            autocomplete="name"
+            required
+         ><label for="email">Email</label
+          ><input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+         ><label class="inline"
+            ><input type="checkbox" name="subscribe" value="1" checked>
+            Получать информацию о скидках и акциях</label
+          ><label for="phone">Номер телефона</label
+          ><input
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+            required
+         ><label for="delivery_address">Адрес доставки</label
+          ><input
+            id="delivery_address"
+            name="delivery_address"
+            autocomplete="address-line1"
+            required
+         >
+          <p class="hint">Доставка осуществляется только по Москве</p>
+          <fieldset>
+            <legend>Время доставки</legend>
+            <label class="inline"
+              ><input type="radio" name="delivery_type" value="now" required>
+              Как можно скорее</label
+            ><label class="inline"
+              ><input
+                type="radio"
+                name="delivery_type"
+                value="by_time"
+                required
+             >
+              К указанному времени</label
+            >
+          </fieldset>
+          <label for="delivery_time">Укажите время доставки</label
+          ><input
+            type="time"
+            id="delivery_time"
+            name="delivery_time"
+            min="07:00"
+            max="23:00"
+            step="300"
+         >
+          <p class="hint">Доставляем с 07:00 до 23:00, шаг — 5 минут.</p>
+          <div class="actions">
+            <button type="reset">Сбросить</button
+            ><button type="submit">Отправить</button>
+          </div>
+        </div>
+      </form>
+    </section>
     <footer id="contacts">
       <p>Позвонить нам: <a href="tel:+74952230523">+7 (495) 223-05-23</a></p>
       <p>Москва, Большая Семёновская, 38 · Ежедневно 07:00–23:00</p>
