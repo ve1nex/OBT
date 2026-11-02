@@ -105,6 +105,15 @@ function renderSummary() {
 function setupForm() {
   const form = document.querySelector("#order-form");
   if (!form) return;
+  form.querySelector('[type="submit"]').addEventListener("click", (event) => {
+    const error = comboError(chosen());
+    if (error) {
+      event.preventDefault();
+      notify(error);
+    }
+    form.elements.delivery_time.required =
+      form.elements.delivery_type.value === "by_time";
+  });
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     submitOrder(form);
@@ -122,15 +131,10 @@ function setupForm() {
       renderSummary();
       renderCheckout();
       renderPanel();
-      renderCheckout();
-      renderPanel();
     }, 0);
   });
 }
 async function start() {
-  renderCombos();
-  setupForm();
-  setupKey();
   const root = document.querySelector("#menu");
   if (root) root.textContent = "Загружаем меню…";
   try {
@@ -150,4 +154,7 @@ async function start() {
     notify(error.message);
   }
 }
+renderCombos();
+setupForm();
+setupKey();
 start();

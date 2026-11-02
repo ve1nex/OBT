@@ -46,8 +46,10 @@ function renderPanel() {
 function deliveryError(form) {
   const time = form.elements.delivery_time;
   time.required = form.elements.delivery_type.value === "by_time";
+  time.setCustomValidity("");
   if (!time.required) return "";
   const now = new Date();
+  if (!time.value) return "Укажите время доставки";
   const [hours, minutes] = time.value.split(":").map(Number);
   if (hours * 60 + minutes <= now.getHours() * 60 + now.getMinutes())
     return "Время доставки должно быть позже текущего";
